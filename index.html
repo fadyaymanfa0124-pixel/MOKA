@@ -15,11 +15,18 @@
 body{
 font-family:'Cairo',sans-serif;
 margin:0;
-background:url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2") center/cover no-repeat;
+
+background-image:url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
 color:white;
 display:flex;
 justify-content:center;
 overflow-x:hidden;
+min-height:100vh;
 }
 
 .app{
@@ -59,7 +66,7 @@ margin-bottom:10px;
 }
 
 button{
-padding:10px 22px;
+padding:12px 25px;
 border:none;
 border-radius:30px;
 background:linear-gradient(45deg,#ff4d6d,#ff758f);
@@ -278,9 +285,8 @@ to{transform:scale(1.1)}
 <p>
 
 يا ملوكة ❤️  
-كل ثانية بتعدي وأنا مبسوط إنك في حياتي.  
-وجودك جنبي خلّى الأيام تبقى أحلى،  
-وكل يوم بيعدي بحس إن حبي ليكي بيكبر أكتر.
+كل ثانية بتعدي وأنا مبسوط إنك في حياتي  
+وكل يوم بيعدي بحبك أكتر.
 
 </p>
 
@@ -322,7 +328,7 @@ to{transform:scale(1.1)}
 
 <br><br>
 
-<a href="https://www.youtube.com/watch?v=Qdj_0hJLoXo&list=RDQdj_0hJLoXo&start_radio=1" target="_blank">
+<a href="https://youtube.com" target="_blank">
 🎵 افتحي الأغنية على يوتيوب
 </a>
 
@@ -348,23 +354,14 @@ to{transform:scale(1.1)}
 <p>
 
 ملوكة ❤️  
-من يوم ما دخلتي حياتي  
-وأنا حاسس إن الدنيا بقت أجمل بكتير.
-
-وجودك في حياتي خلّى كل حاجة ليها معنى  
-وكل لحظة معاكي بتبقى ذكرى جميلة.
-
-يا ملوكة  
-كل يوم بيعدي بحبك أكتر من اليوم اللي قبله.
+من يوم ما دخلتي حياتي وأنا حاسس إن الدنيا بقت أجمل.  
+كل لحظة معاكي ذكرى جميلة.  
 
 وعلى فكرة 🎂  
 عيد ميلادك الجاي مع عيد الفطر  
-وده هيبقى أحلى عيد بالنسبة لي  
-لأننا هنحتفل بيكي وبوجودك في حياتي ❤️
+وده هيبقى أحلى عيد بالنسبة لي ❤️
 
 </p>
-
-<br>
 
 <button onclick="back('video')">⬅️ رجوع</button>
 
@@ -470,5 +467,4 @@ setTimeout(()=>heart.remove(),10000)
 </script>
 
 </body>
-
 </html>
