@@ -10,6 +10,11 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
+<!-- حل الكاش -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
 <style>
 
 body{
@@ -27,6 +32,14 @@ display:flex;
 justify-content:center;
 overflow-x:hidden;
 min-height:100vh;
+
+/* animation دخول */
+animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:scale(1.05)}
+to{opacity:1}
 }
 
 .app{
@@ -199,46 +212,25 @@ to{transform:scale(1.1)}
 <h2>💌 رسالة لي حبيبتي ملوكة</h2>
 
 <div class="card">
-
 <b>👑 الاسم في البطاقة</b>
-
 <p>ملك محمد عبدالحفيظ</p>
-
 </div>
 
 <div class="card">
-
 <b>💗 الأسماء في قلبي</b>
-
 <p>
-
-ملوكة ❤️  
-ملاكي 💖  
-سنفورتي 🥺  
-بنوتي 👧  
-حبيبتي 💕  
-روحي 🌹  
-قلبي ❤️  
-مامي  🥰
-  
+ملوكة ❤️ ملاكي 💖 سنفورتي 🥺 بنوتي 👧 حبيبتي 💕 روحي 🌹 قلبي ❤️ مامي 🥰
 </p>
-
 </div>
 
 <div class="card">
-
 <b>🎂 العمر</b>
-
-<p>19 سنة  🎓</p>
-
+<p>19 سنة 🎓</p>
 </div>
 
 <div class="card">
-
 <b>📏 الطول</b>
-
 <p>سنفورة الي ربع 😄</p>
-
 </div>
 
 <button onclick="next('photos')">التالي ➡️</button>
@@ -284,20 +276,16 @@ to{transform:scale(1.1)}
 <h2>⏳نعرف بعض من</h2>
 
 <p>
-
 ملوكتي ❤️  
 كل ثانية بتعدي وأنا مبسوط إنك في حياتي  
 وكل يوم بيعدي بحبك أكتر
-
 </p>
 
 <div class="timer">
-
 <div class="timebox"><span id="days"></span> يوم</div>
 <div class="timebox"><span id="hours"></span> ساعة</div>
 <div class="timebox"><span id="minutes"></span> دقيقة</div>
 <div class="timebox"><span id="seconds"></span> ثانية</div>
-
 </div>
 
 <br>
@@ -329,7 +317,7 @@ to{transform:scale(1.1)}
 
 <br><br>
 
-<a href="https://www.youtube.com/watch?v=Qdj_0hJLoXo&list=RDMMQdj_0hJLoXo&start_radio=1" target="_blank">
+<a href="https://www.youtube.com/watch?v=Qdj_0hJLoXo" target="_blank">
 🎵 افتحي الأغنية على يوتيوب
 </a>
 
@@ -353,14 +341,12 @@ to{transform:scale(1.1)}
 <h2>💞 كلام من قلبي لي سنفورتي</h2>
 
 <p>
-
 ملوكة ❤️  
 من يوم ما دخلتي حياتي وأنا حاسس إن الدنيا بقت أجمل  
 كل لحظة معاكي ذكرى جميلة  
- 🎂  
-عيد ميلادك الجاي هيبقي يومم مميز اوي  
+🎂  
+عيد ميلادك الجاي هيبقي يوم مميز اوي  
 وده هيبقى أحلى عيد بالنسبة لي ❤️
-
 </p>
 
 <button onclick="back('video')">⬅️ رجوع</button>
@@ -389,6 +375,11 @@ function back(p){show(p)}
 function show(id){
 document.querySelectorAll(".page").forEach(p=>p.style.display="none")
 document.getElementById(id).style.display="block"
+
+if(id=="video"){
+let audio=document.querySelector("audio")
+if(audio) audio.play().catch(()=>{})
+}
 }
 
 function openImg(img){
@@ -404,10 +395,11 @@ alert("أنا بحبك أكتر مما تتخيلي ❤️")
 }
 }
 
+/* عداد */
+
 let start=new Date("2025-10-28")
 
 setInterval(()=>{
-
 let now=new Date()
 let diff=now-start
 
@@ -415,54 +407,55 @@ days.innerHTML=Math.floor(diff/(1000*60*60*24))
 hours.innerHTML=Math.floor((diff/(1000*60*60))%24)
 minutes.innerHTML=Math.floor((diff/(1000*60))%60)
 seconds.innerHTML=Math.floor((diff/1000)%60)
-
 },1000)
 
+/* قلوب ضغط */
+
 document.addEventListener("click",function(e){
-
 let heart=document.createElement("div")
-
 heart.className="clickHeart"
 heart.innerHTML="💖"
-
 heart.style.left=e.clientX+"px"
 heart.style.top=e.clientY+"px"
-
 document.body.appendChild(heart)
-
 setTimeout(()=>heart.remove(),1000)
-
 })
 
+/* ورود */
+
 setInterval(()=>{
-
 let rose=document.createElement("div")
-
 rose.className="rose"
 rose.innerHTML="🌹"
-
 rose.style.left=Math.random()*100+"vw"
-
 document.body.appendChild(rose)
-
 setTimeout(()=>rose.remove(),8000)
-
 },1200)
 
+/* قلوب طايرة */
+
 setInterval(()=>{
-
 let heart=document.createElement("div")
-
 heart.className="heart"
 heart.innerHTML="❤️"
-
 heart.style.left=Math.random()*100+"vw"
-
 document.body.appendChild(heart)
-
 setTimeout(()=>heart.remove(),10000)
-
 },1500)
+
+/* انفجار عند فتح */
+
+window.onload=function(){
+for(let i=0;i<40;i++){
+let h=document.createElement("div")
+h.className="clickHeart"
+h.innerHTML="💖"
+h.style.left=Math.random()*100+"vw"
+h.style.top=Math.random()*100+"vh"
+document.body.appendChild(h)
+setTimeout(()=>h.remove(),1500)
+}
+}
 
 </script>
 
